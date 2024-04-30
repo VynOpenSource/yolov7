@@ -565,7 +565,9 @@ class LoadImagesAndLabels(Dataset):  # for training/testing
             for key, value in self.probabilities.items():
                 key = int(key)
                 if key in self.mapping_classes:
-                    prob_aux[self.mapping_classes[key]] = value
+                    mapped_key = self.mapping_classes[key]
+                    if mapped_key in list(self.label_indices.keys()):
+                        prob_aux[mapped_key] = value
             self.probabilities = prob_aux
 
             # if self.mapping_classes:

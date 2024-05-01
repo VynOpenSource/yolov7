@@ -18,7 +18,7 @@ setup(
     setup_requires=['setuptools_scm'],
     package_data={
         # include any txt files in Data
-        '': ['data/*.txt', 'data/*.yaml']
+        '': ['data/*.txt', '**/*.yaml']
     },
     include_package_data=True,
     #scripts=[''],
